@@ -46,21 +46,40 @@ document.addEventListener('DOMContentLoaded', function () {
   var mobileNav = document.querySelector('.mobile-nav');
 
   if (hamburger && mobileNav) {
-    var toggleMobileNav = function () {
-      var isOpen = mobileNav.classList.toggle('is-open');
+    var toggleMobileNav = function (forceState) {
+      var isOpen = typeof forceState === 'boolean' 
+        ? forceState 
+        : !mobileNav.classList.contains('is-open');
+      
+      mobileNav.classList.toggle('is-open', isOpen);
       hamburger.classList.toggle('is-open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       document.body.style.overflow = isOpen ? 'hidden' : '';
     };
 
-    hamburger.addEventListener('click', toggleMobileNav);
+    hamburger.addEventListener('click', function () {
+      toggleMobileNav();
+    });
 
-    // Close when clicking internal links
-    mobileNav.querySelectorAll('a:not(.mobile-sub-toggle)').forEach(function (link) {
+    // Close when clicking any navigation link
+    mobileNav.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
-        mobileNav.classList.remove('is-open');
-        hamburger.classList.remove('is-open');
-        document.body.style.overflow = '';
+        toggleMobileNav(false);
       });
+    });
+
+    // Close on Escape key press
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) {
+        toggleMobileNav(false);
+      }
+    });
+
+    // Close if viewport expands beyond mobile breakpoint
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 960 && mobileNav.classList.contains('is-open')) {
+        toggleMobileNav(false);
+      }
     });
   }
 
