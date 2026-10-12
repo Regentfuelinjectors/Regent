@@ -827,24 +827,42 @@ button {
 }
 
 /* ---------- ASNU AUTHORIZED SERVICE CENTRE BANNER (Slide 1 PPT) ---------- */
+/* ---------- ASNU CERTIFICATION BAND (Slide 1 PPT) ---------- */
 .asnu-home-section {
   background: #FFFFFF;
-  padding: 2.25rem 0 1.5rem;
+  padding: 2.5rem 0 1.75rem;
   border-bottom: 1px solid #E5E7EB;
+}
+
+.asnu-home-section .container {
+  width: 100%;
+  max-width: 96%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1600px) {
+  .asnu-home-section .container {
+    max-width: 1720px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 .asnu-badge-card {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1.75rem;
-  padding: 1.25rem 2.25rem;
+  justify-content: flex-start;
+  gap: 2.25rem;
+  padding: 1.5rem 2.75rem;
   background: #F8F9FA;
   border: 1px solid #E2E8F0;
-  border-left: 5px solid var(--red);
+  border-left: 6px solid var(--red);
   border-radius: var(--radius-sm);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-  max-width: 860px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
@@ -855,7 +873,7 @@ button {
 }
 
 .asnu-badge-logo {
-  height: 60px;
+  height: 64px;
   width: auto;
   flex-shrink: 0;
   object-fit: contain;
@@ -868,7 +886,7 @@ button {
 
 .asnu-badge-title {
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.75px;
@@ -878,7 +896,7 @@ button {
 
 .asnu-badge-sub {
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: 0.85rem;
   color: #4B5563;
   margin-top: 0.25rem;
 }
@@ -886,12 +904,23 @@ button {
 /* ---------- HOMEPAGE SERVICES SECTION (Slide 1 & 4 PPT) ---------- */
 .home-services-section {
   background: #FFFFFF;
-  padding: 3.5rem 0 2.5rem;
+  padding: 3.5rem 0 3rem;
 }
 
 .home-services-container {
-  max-width: 980px;
+  width: 100%;
+  max-width: 96%;
   margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 1600px) {
+  .home-services-container {
+    max-width: 1720px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 .home-services-head {
@@ -900,7 +929,7 @@ button {
 
 .home-services-title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
   font-weight: 700;
   color: #111827;
   text-transform: uppercase;
@@ -922,15 +951,17 @@ button {
 
 .home-services-desc {
   font-family: var(--font-body);
-  font-size: clamp(1.0625rem, 1.3vw, 1.25rem);
-  line-height: 1.8;
+  font-size: clamp(1.1rem, 1.25vw, 1.35rem);
+  line-height: 1.85;
   color: #374151;
   margin-top: 1.25rem;
   background: #F8F9FA;
-  padding: 1.75rem 2rem;
+  padding: 2rem 2.75rem;
   border-radius: var(--radius-sm);
   border: 1px solid #E5E7EB;
-  border-left: 4px solid var(--red);
+  border-left: 6px solid var(--red);
+  max-width: 100%;
+  width: 100%;
 }
 
 .vehicle-chip-group {
@@ -972,19 +1003,39 @@ button {
 /* ---------- 95% FUEL INJECTOR CALLOUT BANNER (Slide 1 & 9 PPT) ---------- */
 .home-callout-section {
   background: #FFFFFF;
-  padding: 1.5rem 0 4.5rem;
+  padding: 2rem 0 4.5rem;
+}
+
+.home-callout-section .container,
+.home-reviews-section .container {
+  width: 100%;
+  max-width: 96%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1600px) {
+  .home-callout-section .container,
+  .home-reviews-section .container {
+    max-width: 1720px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 .home-callout-banner {
   background: #FFF8F8;
   border: 2px solid var(--red);
   border-radius: var(--radius-sm);
-  padding: 1.75rem 2.25rem;
+  padding: 2rem 2.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
   box-shadow: 0 4px 18px rgba(232, 41, 31, 0.08);
+  max-width: 100%;
+  width: 100%;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
@@ -2599,14 +2650,15 @@ textarea.form-control {
 .stats-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  background: rgba(17, 21, 26, 0.85);
+  gap: 2rem;
+  background: rgba(17, 21, 26, 0.88);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: var(--radius-sm);
-  padding: 1.6rem 2.25rem;
-  max-width: 940px;
+  padding: 1.85rem 2.75rem;
+  max-width: 100%;
+  width: 100%;
 }
 
 .stat-item {
@@ -2787,3 +2839,185 @@ textarea.form-control {
     display: none;
   }
 }
+
+/* ---------- OUR PRODUCTS SECTION (PPT Slide 2 Showcase) ---------- */
+.home-products-section {
+  padding: 80px 0 90px;
+  background: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+}
+
+.home-products-container {
+  width: 100%;
+  max-width: 98%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 1600px) {
+  .home-products-container {
+    max-width: 1800px;
+    padding: 0 24px;
+  }
+}
+
+.home-products-head-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.75rem;
+}
+
+.home-products-title-box {
+  display: inline-block;
+  padding: 12px 52px;
+  border: 1.5px solid #CBD5E1;
+  background: #FFFFFF;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.home-products-title {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4vw, 54px);
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: #0F172A;
+  margin: 0;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.home-products-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.home-product-card {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 6px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #0F172A;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.home-product-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--red);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08), 0 0 0 1px var(--red);
+}
+
+.home-product-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  overflow: hidden;
+}
+
+.home-product-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.home-product-card:hover .home-product-frame img {
+  transform: scale(1.04);
+}
+
+.home-product-btn-wrap {
+  padding: 0 1rem 1.1rem 1rem;
+  margin-top: auto;
+}
+
+.home-product-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 8px;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: #1E293B;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  text-align: center;
+}
+
+.home-product-card:hover .home-product-btn {
+  background: var(--red);
+  border-color: var(--red);
+  color: #FFFFFF;
+}
+
+@media (max-width: 1100px) {
+  .home-products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-products-container {
+    max-width: 100%;
+    padding: 0 12px;
+  }
+  .home-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .home-products-grid .home-product-card:last-child {
+    grid-column: span 2;
+  }
+  .home-product-frame {
+    padding: 0.75rem;
+  }
+  .home-product-btn {
+    font-size: 12px;
+    padding: 8px 6px;
+  }
+}
+
+/* ---------- GOOGLE REVIEWS SECTION (Live Widget & Actions) ---------- */
+.home-reviews-section {
+  background: var(--off-white);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 100px 0;
+}
+
+.reviews-widget-container {
+  min-height: 240px;
+  margin: 0 auto;
+}
+
+.reviews-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 2.75rem;
+}
+
+.social-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
