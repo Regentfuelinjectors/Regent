@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ------------------------------------------------------------------------
      2. STICKY HEADER SCROLL EFFECT
      ------------------------------------------------------------------------ */
+  window.initHeaderFeatures = function () {
   var siteHeader = document.querySelector('.site-header');
   if (siteHeader) {
     var checkScroll = function () {
@@ -105,6 +106,9 @@ document.addEventListener('DOMContentLoaded', function () {
       link.classList.add('active');
     }
   });
+  };
+
+  window.initHeaderFeatures();
 
   /* ------------------------------------------------------------------------
      5. HERO SLIDER (HOMEPAGE)
